@@ -1,38 +1,36 @@
 class Stack:
     def __init__(self):
-        self.stack = []
+        self.s1 = []
 
-    def check_empty(self):
-        return len(self.stack) == 0
-     
     def push(self, item):
-        self.stack.append(item)
-        print("Pushed item: ", item)
+        self.s1.append(item)
+        print(f"Pushed item = {item}")
 
     def pop(self):
-        if (self.check_empty()):
-            print("Stack is empty")
-            return "stack is empty"
+        print(f"Item removed = {self.s1.pop()}")
 
-        print("\nDeleted item : ", self.stack.pop())
+    def traverse(self):
+        i = 0
+        while i < len(self.s1):
+            print(f"{self.s1[i]} ", end="")
+            i += 1
 
-    def print_stack(self):
-        if (self.check_empty()):
-            print("Stack is empty")
-            return "stack is empty"
-        
-        for i in self.stack:
-                print(f"{i} ",end='')
+    def isEmpty(self):
+        return len(self.s1) == 0
 
     def peek(self):
-        return self.stack[len(self.stack)-1]
+        if (self.isEmpty()):
+            print("list is Empty")
+        top = len(self.s1)-1
+        print(f"Topmost element = {self.s1[top]}")
+        return top
 
-t1 = Stack()
-print(t1.check_empty())
-t1.push(50)
-t1.push(27)
-t1.push(30)
-t1.print_stack()
-t1.pop()
-t1.print_stack()
-print(f"\n{t1.peek()}")
+
+s = Stack()
+s.push(5)
+s.push(10)
+s.push(15)
+s.pop()
+s.traverse()
+print(f"\n{s.isEmpty()}")
+s.peek()
