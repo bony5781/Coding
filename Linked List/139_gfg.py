@@ -39,6 +39,9 @@ class LinkedList:
             curr.next = new_node;
             curr.next.next = None;
     
+    def pop(self,head):
+        self.head = self.head.next;
+    
     # Utility function to print the LinkedList
     def printList(self):
         curr = self.head
